@@ -1,0 +1,24 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> Create Post
+        </h1>
+        <% include ./partials/messages %>
+    <form action="/users/posts" method="POST">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" name="title"  placeholder="Enter title"
+      value="<%= typeof title != 'undefined' ? title : '' %>">
+
+    </div>
+    <div class="form-group">
+      <label for="body">Body</label>
+      <input type="text" class="form-control" id="body" name="body" placeholder="Body" value="<%= typeof body != 'undefined' ? body : '' %>">
+    </div>
+    <input type="hidden" name="name" value="<%= user.name %>" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+      </div>
+    </div>
+</div>

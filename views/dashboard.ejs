@@ -1,0 +1,14 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+<a href="/createPost" class="btn btn-secondary">Create Post</a>
+
+    <% for(let i = 0; i < user.posts.length; i++) { %>
+        <ul class="list-group">Post <%= i+1 %>
+            <li class="list-group-item">Title: <%= user.posts[i].title %></li>
+            <li class="list-group-item">Body: <%= user.posts[i].body %></li>
+            <a href="/edit/<%= user.posts[i]._id %>" class="btn btn-secondary">Update</a>
+            <a href="/delete/<%= user.posts[i]._id %>" class="btn btn-danger">Delete</a>
+        </ul>
+    <% } %>
